@@ -1,0 +1,49 @@
+@import url("https://use.typekit.net/ylg0ybk.css");
+/*font-family: brandon-grotesque;*/
+
+body {
+	background-color: #141414; /*bijna zwart*/
+}
+
+img {
+	width: 25%; /*zodat de afbeeldingen niet buiten het scherm vallen*/
+}
+
+h1 {
+	font-family: brandon-grotesque;
+	color: #D3D3D3; /*witgrijs*/
+}
+
+.grafiek {
+	display: flex;
+	background-color: #1D1D1D;
+	border-radius: 10px;
+	display: inline-block;
+	justify-content: center;
+	text-align: center;
+}
+
+.holderAfstand {
+	width: 600px; /*grootte van grafiek1*/
+}
+
+.holderKolonisten {
+	width: 600px;
+}
+
+.holderVoorraden {
+	width: 600px; 
+}
+
+/*M E D I A   Q U E R I E S*/
+/*MOBIEL*/
+@media only screen and (max-width: 480px){		/*moet dit niet weg? en dan de algemene code voor 'mobile first'*/
+	}
+
+/*TABLET*/
+@media only screen and (min-width: 480px) and (max-width: 991px){
+	}
+
+/*DESKTOP*/
+@media only screen and (min-width: 992px){
+	}
