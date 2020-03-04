@@ -5,6 +5,161 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="XT2challenge1.css" />
 		<title>Interplanetary Transport System Interface</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+		<script>
+			function grafiek1Afstand() {
+				var ctx = document.getElementById('afstand');
+				
+				Chart.defaults.global.defaultFontColor = '#D3D3D3';		/*kleur van de tekst in de chart*/
+				Chart.defaults.global.defaultFontFamily = "'brandon-grotesque', 'sans-serif'";
+
+				var datasetsAfstand  =  { /*refereert naar datasets in var myChart (makkelijker voor schalen)*/
+				            label: 'Afgelegde afstand (miljoen km)',
+				            data: [0, 10, 13, 21, 38, 42, 45, 60],
+				            backgroundColor: [
+				                'rgba(91, 53, 217, 0.2)',
+				            ],
+				            borderColor: [
+				                'rgba(91, 53, 217, 1)',
+				            ],
+				            borderWidth: 3
+				        };
+
+				var myChart = new Chart(ctx, {
+				    type: 'line',
+				    data: {
+				        labels: ['okt', 'nov', 'dec', 'jan', 'feb', 'mrt', 'apr', 'mei'],
+				        datasets: [datasetsAfstand]
+				    },
+				    options: {
+
+				    	legend:{ //legenda weg
+							display: false
+						},
+
+				        scales: {
+				            yAxes: [{
+				                ticks: {
+				                	display: false,
+				                    beginAtZero: true,
+				                }
+				            }]
+				        }
+
+				    }
+				});
+			}
+
+			function grafiek2Kolonisten() {
+				var ctx = document.getElementById('kolonisten');
+				var myChart = new Chart(ctx, {
+				    type: 'doughnut',
+				    data: {
+				        labels: ['agrariers', 'artsen', 'technici', 'bemanning', 'overig'],
+				        datasets: [{
+				            label: 'Kolonisten',
+				            data: [8, 7, 24, 12, 52],
+				            backgroundColor: [
+				                'rgba(64, 37, 255, 1)',
+				                'rgba(52, 213, 169, 1)',
+				                'rgba(27, 15, 64, 1)',
+				                'rgba(53, 31, 128, 1)',
+				                'rgba(91, 53, 217, 1)',
+				            ],
+				            borderColor: [ 						/*kan deze niet weg??*/
+				                'rgba(64, 37, 255, 1)',
+				                'rgba(52, 213, 169, 1)',
+				                'rgba(27, 15, 64, 1)',
+				                'rgba(53, 31, 128, 1)',
+				                'rgba(91, 53, 217, 1)',
+				            ],
+				            borderWidth: 1,
+				            hoverBackgroundColor: [
+				           		'rgba(64, 37, 255, 1)',
+				                'rgba(52, 213, 169, 1)',
+				                'rgba(27, 15, 64, 1)',
+				                'rgba(53, 31, 128, 1)',
+				                'rgba(91, 53, 217, 1)',
+				            ]
+				        }]
+				    },
+				    options: {
+				        scales: {
+				            yAxes: [{
+				                ticks: {
+				                	display: false,
+				                    beginAtZero: true
+				                }
+				            }]
+				        }
+				    }
+				});
+			}
+
+			function grafiek3Voorraden(){
+				var ctx = document.getElementById('voorraden'); //javascript variabele, ctx is nu dat canvas element
+				var myChart = new Chart(ctx, {	//alles hieronder is van toepassing op <canvas id="myChart"
+				    type: 'bar',
+				    data: { //hier ga je de grafiek echt creeeren. door { kun je zien dat het een 'object' is. dus meer een lijn in de grafiek
+				        labels: ['dranken', 'groente & fruit', 'vlees & vis', 'overig'],	// [ geeft aan dat het een 'array' is
+				        datasets: [{
+				            label: 'Voorraden (%)',
+				            data: [62, 50, 81, 67],
+				            backgroundColor: [					/*achtergrondkleur van de staven (beetje transparant)*/
+				                'rgba(53, 31, 128, 0.2)',
+				                'rgba(91, 53, 217, 0.2)',
+				                'rgba(64, 37, 255, 0.2)',
+				                'rgba(52, 213, 169, 0.2)',
+				            ],
+				            borderColor: [						/*kleur van de borders van de staven (solid)*/
+				                'rgba(53, 31, 128, 1)',
+				                'rgba(91, 53, 217, 1)',
+				                'rgba(64, 37, 255, 1)',
+				                'rgba(52, 213, 169, 1)',
+				            ],
+				            borderWidth: 3,						/*dikte van de border*/
+				            hoverBackgroundColor: [				/*achtergrondkleur wanneer hover (solid)*/
+				          		'rgba(53, 31, 128, 1)',
+				                'rgba(91, 53, 217, 1)',
+				                'rgba(64, 37, 255, 1)',
+				                'rgba(52, 213, 169, 1)',
+				            ],
+				            hoverBorderColor: [					/*borderkleur wanneeer hover (solid)*/
+				            	'rgba(53, 31, 128, 1)',
+				                'rgba(91, 53, 217, 1)',
+				                'rgba(64, 37, 255, 1)',
+				                'rgba(52, 213, 169, 1)',
+				            ]
+				        }]
+				    },
+				    options: {	//om de grafiek een beetje meer te configureren, dus de hele grafiek
+
+				    	legend:{ //legenda weg
+								display: false
+							},
+
+				        scales: {
+				            yAxes: [{
+				                ticks: {
+				                	display: false,
+				                    beginAtZero: true //y-as begint bij 0
+				                }
+				            }]
+				        }
+				    }
+				});
+			}
+
+
+			window.onload = function(){
+				grafiek1Afstand();
+				grafiek2Kolonisten();
+				grafiek3Voorraden();
+		}
+		</script>
+
+
 	</head>
 
 	<body>
@@ -16,51 +171,11 @@
 			</header>
 
 			<main>
-
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
-
 				<section class="grafiek grafiek1">
 					<h1>Afgelegde afstand</h1>
 					<div class="holderAfstand">
 						<canvas id="afstand"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
 					</div>
-					<script>
-						var ctx = document.getElementById('afstand');
-						
-						Chart.defaults.global.defaultFontColor = '#D3D3D3';		/*kleur van de tekst in de chart*/
-						Chart.defaults.global.defaultFontFamily = "'brandon-grotesque', 'sans-serif'";
-
-						var myDataSet  =  {
-						            label: 'Afgelegde afstand (miljoen km)',
-						            data: [0, 10, 13, 21, 38, 42, 45, 60],
-						            backgroundColor: [
-						                'rgba(91, 53, 217, 0.2)',
-						            ],
-						            borderColor: [
-						                'rgba(91, 53, 217, 1)',
-						            ],
-						            borderWidth: 3
-						        };
-
-						var myChart = new Chart(ctx, {
-						    type: 'line',
-						    data: {
-						        labels: ['okt', 'nov', 'dec', 'jan', 'feb', 'mrt', 'apr', 'mei'],
-						        datasets: [myDataSet]
-						    },
-						    options: {
-						        scales: {
-						            yAxes: [{
-						                ticks: {
-						                	display: false,
-						                    beginAtZero: true
-						                }
-						            }]
-						        }
-						    }
-						});
-					</script>
 				</section>
 
 				<section class="grafiek grafiek2">
@@ -68,50 +183,34 @@
 					<div class="holderKolonisten">
 						<canvas id="kolonisten"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
 					</div>
-					<script>
-						var ctx = document.getElementById('kolonisten');
-						var myChart = new Chart(ctx, {
-						    type: 'doughnut',
-						    data: {
-						        labels: ['agrariers', 'artsen', 'technici', 'bemanning', 'overig'],
-						        datasets: [{
-						            label: 'Kolonisten',
-						            data: [8, 7, 24, 12, 52],
-						            backgroundColor: [
-						                'rgba(64, 37, 255, 1)',
-						                'rgba(52, 213, 169, 1)',
-						                'rgba(27, 15, 64, 1)',
-						                'rgba(53, 31, 128, 1)',
-						                'rgba(91, 53, 217, 1)',
-						            ],
-						            borderColor: [ 						/*kan deze niet weg??*/
-						                'rgba(64, 37, 255, 1)',
-						                'rgba(52, 213, 169, 1)',
-						                'rgba(27, 15, 64, 1)',
-						                'rgba(53, 31, 128, 1)',
-						                'rgba(91, 53, 217, 1)',
-						            ],
-						            borderWidth: 1,
-						            hoverBackgroundColor: [
-						           		'rgba(64, 37, 255, 1)',
-						                'rgba(52, 213, 169, 1)',
-						                'rgba(27, 15, 64, 1)',
-						                'rgba(53, 31, 128, 1)',
-						                'rgba(91, 53, 217, 1)',
-						            ]
-						        }]
-						    },
-						    options: {
-						        scales: {
-						            yAxes: [{
-						                ticks: {
-						                    beginAtZero: true
-						                }
-						            }]
-						        }
-						    }
-						});
-					</script>
+
+					<article class="legenda">	<!--flexbox gebruiken hiervoor!!-->
+						<article class="agrariers">
+							<div class="kleur kleur1"></div>
+							<h2>agrariers</h2>
+						</article>
+
+						<article class="artsen">
+							<div class="kleur kleur2"></div>
+							<h2>artsen</h2>
+						</article>
+
+						<article class="technici">
+							<div class="kleur kleur3"></div>
+							<h2>technici</h2>
+						</article>
+
+						<article class="bemanning">
+							<div class="kleur kleur4"></div>
+							<h2>bemanning</h2>
+						</article>
+
+						<article class="overig">
+							<div class="kleur kleur5"></div>
+							<h2>overig</h2>
+						</article>
+					</article>
+
 				</section>
 
 				<section class="grafiek grafiek3">
@@ -119,53 +218,6 @@
 					<div class="holderVoorraden">
 						<canvas id="voorraden"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
 					</div>
-					<script> 
-					var ctx = document.getElementById('voorraden'); //javascript variabele, ctx is nu dat canvas element
-					var myChart = new Chart(ctx, {	//alles hieronder is van toepassing op <canvas id="myChart"
-					    type: 'bar',
-					    data: { //hier ga je de grafiek echt creeeren. door { kun je zien dat het een 'object' is. dus meer een lijn in de grafiek
-					        labels: ['dranken', 'groente & fruit', 'vlees & vis', 'overig'],	// [ geeft aan dat het een 'array' is
-					        datasets: [{
-					            label: 'Voorraden (%)',
-					            data: [62, 50, 81, 67],
-					            backgroundColor: [					/*achtergrondkleur van de staven (beetje transparant)*/
-					                'rgba(53, 31, 128, 0.2)',
-					                'rgba(91, 53, 217, 0.2)',
-					                'rgba(64, 37, 255, 0.2)',
-					                'rgba(52, 213, 169, 0.2)',
-					            ],
-					            borderColor: [						/*kleur van de borders van de staven (solid)*/
-					                'rgba(53, 31, 128, 1)',
-					                'rgba(91, 53, 217, 1)',
-					                'rgba(64, 37, 255, 1)',
-					                'rgba(52, 213, 169, 1)',
-					            ],
-					            borderWidth: 3,						/*dikte van de border*/
-					            hoverBackgroundColor: [				/*achtergrondkleur wanneer hover (solid)*/
-					          		'rgba(53, 31, 128, 1)',
-					                'rgba(91, 53, 217, 1)',
-					                'rgba(64, 37, 255, 1)',
-					                'rgba(52, 213, 169, 1)',
-					            ],
-					            hoverBorderColor: [					/*borderkleur wanneeer hover (solid)*/
-					            	'rgba(53, 31, 128, 1)',
-					                'rgba(91, 53, 217, 1)',
-					                'rgba(64, 37, 255, 1)',
-					                'rgba(52, 213, 169, 1)',
-					            ]
-					        }]
-					    },
-					    options: {	//om de grafiek een beetje meer te configureren, dus de hele grafiek
-					        scales: {
-					            yAxes: [{
-					                ticks: {
-					                    beginAtZero: true //y-as begint bij 0
-					                }
-					            }]
-					        }
-					    }
-					});
-					</script>
 				</section>
 
 			</main>
