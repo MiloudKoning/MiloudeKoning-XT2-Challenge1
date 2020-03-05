@@ -27,6 +27,7 @@ body { /*waarom werkt dit niet???*/
 
 img {
 	width: 70%; /*max. 100% zodat de afbeeldingen niet buiten het scherm vallen*/
+	height: 100%;
 }
 
 figure { /*afbeelding in het midden van het scherm*/
@@ -143,6 +144,7 @@ p {
 
 	img {
 		width: 50%;
+		height: 100%;
 	}
 
 	.grafiek {
@@ -191,6 +193,12 @@ p {
 	.container {
 		grid-area: container;
 	}
+
+	img {
+		width: 30%;
+		height: 100%;
+		margin: 20px;
+	}
 	/* Met flexbox de 3 grafieken uitlijnen lukte niet, dus in plaats daarvan grid gemaakt
 	main {
 		display: flex;
@@ -208,6 +216,14 @@ p {
 	*/
 
 	/*de grid omdat flexbox niet lukte*/
+	h1 {
+		font-size: 1.5em;
+	}
+
+	.legenda {
+		margin-bottom: 20px;
+	}
+
 	main {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
@@ -228,7 +244,7 @@ p {
 	.grafiek2 {
 		grid-area: grafiek2;
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 
 	/*.tabletNaastElkaar {
@@ -237,14 +253,26 @@ p {
 		justify-content: space-between;
 	}*/
 
+	.grafiek3 {
+		grid-area: grafiek3;
+	}
+
+	.holderAfstand {
+		width: 70%;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
 	.holderKolonisten {
 		width: 100%;
 		margin-top: 40px;
 		margin-bottom: 80px;
 	}
 
-	.grafiek3 {
-		grid-area: grafiek3;
+	.holderVoorraden {
+		width: 70%;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 
 }
