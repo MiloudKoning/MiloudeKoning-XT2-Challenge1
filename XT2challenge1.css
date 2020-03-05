@@ -127,16 +127,20 @@ p {
 /*M E D I A   Q U E R I E S*/
 /*TABLET*/
 @media only screen and (min-width: 480px) and (max-width: 991px){
-	body { /*waarom werkt dit niet???*/
-	display: grid;
-	grid-template-columns: 1fr 20fr 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		". container ."; 
+	body { 
+		display: grid;
+		grid-template-columns: 1fr 20fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			". container ."; 
 	}
 
 	.container {
 		grid-area: container;
+	}
+
+	img {
+		width: 50%;
 	}
 
 	.grafiek {
@@ -155,11 +159,12 @@ p {
 	}
 
 	p { 
-		padding-left: 140px; /*want de flexbox die op mobile wel werkt, werkt hier niet op (justify-content: space-between)*/
+		padding-left: 140px; /*Op deze manier gedaan want de flexbox die op mobiel wel werkt, werkt hier niet op (justify-content: space-between)*/
 	}
 
 }
 
 /*DESKTOP*/
 @media only screen and (min-width: 992px){
+
 }
