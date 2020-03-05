@@ -212,26 +212,39 @@ p {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
 		grid-template-rows: auto/*5fr 1fr 2fr 3fr*/;
-		grid-column-gap: 2em;
+		grid-column-gap: 2.5em;
 		grid-template-areas:
 		"grafiek1 grafiek2"
-		"grafiek1 grafiek2"
-		". grafiek2"
+		/*"grafiek1 grafiek2"*/
+		/*". grafiek2"*/
 		"grafiek3 grafiek2"
 		"grafiek3 .";
 	}
 
 	.grafiek1 {
-		grid-area: "grafiek1";
+		grid-area: grafiek1;
 	}
 
 	.grafiek2 {
-		grid-area: "grafiek2";
+		grid-area: grafiek2;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	/*.tabletNaastElkaar {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}*/
+
+	.holderKolonisten {
+		width: 100%;
+		margin-top: 40px;
+		margin-bottom: 80px;
 	}
 
 	.grafiek3 {
-		grid-area: "grafiek3";
+		grid-area: grafiek3;
 	}
-
 
 }
