@@ -39,7 +39,17 @@
 						},
 
 				        scales: {
+				        	xAxes: [{
+				        		gridLines: {
+				        			display: false
+				        		}
+				        	}],
+
 				            yAxes: [{
+				            	gridLines: {
+				            		color: "rgba(255, 255, 255, 5%)"
+				            	},
+
 				                ticks: {
 				                	display: false,
 				                    beginAtZero: true,
@@ -85,14 +95,18 @@
 				        }]
 				    },
 				    options: {
-				        scales: {
+
+				    	legend:{ //legenda weg
+								display: false
+							},
+
+				       	/*scales: { //dit deel weg: grid lijnen achter diagram weg
 				            yAxes: [{
 				                ticks: {
-				                	display: false,
-				                    beginAtZero: true
+				                	display: false
 				                }
 				            }]
-				        }
+				        }*/
 				    }
 				});
 			}
@@ -140,7 +154,17 @@
 							},
 
 				        scales: {
+				        	xAxes: [{
+				        		gridLines: {
+				        			display: false
+				        		}
+				        	}],
+
 				            yAxes: [{
+				            	gridLines: {
+				            		color: "rgba(255, 255, 255, 5%)"
+				            	},
+
 				                ticks: {
 				                	display: false,
 				                    beginAtZero: true //y-as begint bij 0
@@ -163,7 +187,7 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<section class="container">
 			<header>
 				<figure class="logo">
 					<img class="logo" src="images/spacex-logo.png" alt="Logo SpaceX wit"/>
@@ -180,37 +204,53 @@
 
 				<section class="grafiek grafiek2">
 					<h1>Kolonisten</h1>
-					<div class="holderKolonisten">
-						<canvas id="kolonisten"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
+					<div class="tabletNaastElkaar">
+						<div class="holderKolonisten">
+							<canvas id="kolonisten"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
+						</div>
+
+						<article class="legenda">	<!--flexbox gebruiken hiervoor!!-->
+							<article class="agrariers">
+								<div class="kleur kleur1"></div>
+								<div class="naastElkaar">
+									<h2>agrariers</h2>
+									<p>8</p>
+								</div>
+							</article>
+
+							<article class="artsen">
+								<div class="kleur kleur2"></div>
+								<div class="naastElkaar">
+									<h2>artsen</h2>
+									<p>7</p>
+								</div>
+							</article>
+
+							<article class="technici">
+								<div class="kleur kleur3"></div>
+								<div class="naastElkaar">
+									<h2>technici</h2>
+									<p>24</p>
+								</div>
+							</article>
+
+							<article class="bemanning">
+								<div class="kleur kleur4"></div>
+								<div class="naastElkaar">
+									<h2>bemanning</h2>
+									<p>12</p>
+								</div>
+							</article>
+
+							<article class="overig">
+								<div class="kleur kleur5"></div>
+								<div class="naastElkaar">
+									<h2>overig</h2>
+									<p>52</p>
+								</div>
+							</article>
+						</article>
 					</div>
-
-					<article class="legenda">	<!--flexbox gebruiken hiervoor!!-->
-						<article class="agrariers">
-							<div class="kleur kleur1"></div>
-							<h2>agrariers</h2>
-						</article>
-
-						<article class="artsen">
-							<div class="kleur kleur2"></div>
-							<h2>artsen</h2>
-						</article>
-
-						<article class="technici">
-							<div class="kleur kleur3"></div>
-							<h2>technici</h2>
-						</article>
-
-						<article class="bemanning">
-							<div class="kleur kleur4"></div>
-							<h2>bemanning</h2>
-						</article>
-
-						<article class="overig">
-							<div class="kleur kleur5"></div>
-							<h2>overig</h2>
-						</article>
-					</article>
-
 				</section>
 
 				<section class="grafiek grafiek3">
@@ -221,6 +261,6 @@
 				</section>
 
 			</main>
-		</div>
+		</section>
 	</body>
 </html> 

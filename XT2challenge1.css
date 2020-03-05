@@ -5,6 +5,24 @@ body {
 	background-color: #141414; /*bijna zwart*/
 	font-family: 'brandon-grotesque', 'sans-serif';
 	color: #D3D3D3; /*witgrijs*/
+	/*margin-left: 20px;
+	margin-right: 20px;*/
+}
+
+body { /*waarom werkt dit niet???*/
+	display: grid;
+	grid-template-columns: 1fr 7fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		". container ."; 
+}
+
+.container {
+	grid-area: container;
+}
+
+.logo {
+	margin: 15px;
 }
 
 img {
@@ -18,11 +36,32 @@ figure { /*afbeelding in het midden van het scherm*/
 
 h1 {
 	font-size: 1.3em;
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
 
 h2 {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0;
+}
+
+p {
 	font-size: 0.9em;
-	font-style: normal;
+	margin: 0;
+	/*align-self: flex-end;*/
+	font-weight: bold;
+}
+
+.legenda {
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.agrariers, .artsen, .technici, .bemanning, .overig {
+	display: flex;
+	flex-direction: column;
 }
 
 .kleur {
@@ -51,15 +90,25 @@ h2 {
 	background-color: #5B35D9;
 }
 
+.naastElkaar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
 
 .grafiek {
-	display: flex;
+	/*display: flex;*/
 	background-color: #1D1D1D;
 	border-radius: 10px;
-	display: inline-block;
-	justify-content: center;
+	/*display: inline-block;
+	justify-content: center;*/
 	text-align: center;
-	width: 100%;
+	max-width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
 }
 
 .holderAfstand {
@@ -68,22 +117,45 @@ h2 {
 
 .holderKolonisten {
 	width: 100%;
+
 }
 
 .holderVoorraden {
 	width: 100%; 
 }
 
-
 /*M E D I A   Q U E R I E S*/
-/*MOBIEL*/
-@media only screen and (max-width: 480px){		/*moet dit niet weg? en dan de algemene code voor 'mobile first'*/
-	}
-
 /*TABLET*/
 @media only screen and (min-width: 480px) and (max-width: 991px){
+	body { /*waarom werkt dit niet???*/
+	display: grid;
+	grid-template-columns: 1fr 20fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		". container ."; 
 	}
+
+	.container {
+		grid-area: container;
+	}
+
+	.grafiek {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	.holderKolonisten {
+		width: 50%;
+	}
+
+	.tabletNaastElkaar {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+}
 
 /*DESKTOP*/
 @media only screen and (min-width: 992px){
-	}
+}
