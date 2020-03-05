@@ -154,6 +154,10 @@ p {
 		align-items: center;
 	}
 
+	p { 
+		padding-left: 140px; /*want de flexbox die op mobile wel werkt, werkt hier niet op (justify-content: space-between)*/
+	}
+
 }
 
 /*DESKTOP*/
