@@ -98,11 +98,13 @@ p {
 }
 
 .grafiek {
-	/*display: flex;*/
+	display: flex;
+	flex-direction: column; 
 	background-color: #1D1D1D;
 	border-radius: 10px;
-	/*display: inline-block;
-	justify-content: center;*/
+	/*display: inline-block;*/
+	justify-content: center; /*doet niks*/
+	align-items: center;
 	text-align: center;
 	max-width: 100%;
 	padding: 10px;
@@ -148,8 +150,20 @@ p {
 		margin-bottom: 40px;
 	}
 
+	.holderAfstand {
+		width: 70%;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
 	.holderKolonisten {
 		width: 50%;
+	}
+
+	.holderVoorraden {
+		width: 70%;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 
 	.tabletNaastElkaar {
@@ -166,5 +180,58 @@ p {
 
 /*DESKTOP*/
 @media only screen and (min-width: 992px){
+	body { 
+		display: grid;
+		grid-template-columns: 2fr 30fr 2fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			". container ."; 
+	}
+
+	.container {
+		grid-area: container;
+	}
+	/* Met flexbox de 3 grafieken uitlijnen lukte niet, dus in plaats daarvan grid gemaakt
+	main {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.grafiek1 {
+		flex: 2 1 auto;
+	}
+
+	.grafiek3 {
+		flex: 2 1 auto;
+	}
+	*/
+
+	/*de grid omdat flexbox niet lukte*/
+	main {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: auto/*5fr 1fr 2fr 3fr*/;
+		grid-column-gap: 2em;
+		grid-template-areas:
+		"grafiek1 grafiek2"
+		"grafiek1 grafiek2"
+		". grafiek2"
+		"grafiek3 grafiek2"
+		"grafiek3 .";
+	}
+
+	.grafiek1 {
+		grid-area: "grafiek1";
+	}
+
+	.grafiek2 {
+		grid-area: "grafiek2";
+	}
+
+	.grafiek3 {
+		grid-area: "grafiek3";
+	}
+
 
 }
