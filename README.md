@@ -1,9 +1,7 @@
 # MiloudeKoning-XT2-Challenge1
 Visueel ontwerp
 ------------
-Ik heb ervoor gekozen om hetzelfde lettertype te gebruiken als op de website van SpaceX (Brandon Grotesque) om hier goed op aan te sluiten. 
-Verder heb ik gekozen voor een donkere achtergrond, ook dit om te passen bij het thema van de opdracht. Verder heb ik het logo van SpaceX bovenaan mijn schermen gezet, omdat dit dashboard als het ware voor SpaceX gemaakt is. 
-Verder heb ik voor de verschillende grafieken gekozen voor vooral paarse kleuren, dit heeft naar mijn idee een beetje een futuristische uitstraling. (door de combinatie van een felle kleur paars en zwart).
+Ik heb ervoor gekozen om hetzelfde lettertype te gebruiken als op de website van SpaceX (Brandon Grotesque) om hier goed op aan te sluiten. Verder heb ik gekozen voor een donkere achtergrond, ook dit om te passen bij het thema van de opdracht. Verder heb ik het logo van SpaceX bovenaan mijn schermen gezet, omdat dit dashboard als het ware voor SpaceX gemaakt is. Verder heb ik voor de verschillende grafieken gekozen voor vooral paarse kleuren, dit heeft naar mijn idee een beetje een futuristische uitstraling. (door de combinatie van een felle kleur paars en zwart).
 
 Ik heb ervoor gekozen om de volgende data te visualiseren:
 
