@@ -1,15 +1,9 @@
 @import url("https://use.typekit.net/ylg0ybk.css");
-/*font-family: brandon-grotesque;*/
 
 body {
 	background-color: #141414; /*bijna zwart*/
 	font-family: 'brandon-grotesque', 'sans-serif';
 	color: #D3D3D3; /*witgrijs*/
-	/*margin-left: 20px;
-	margin-right: 20px;*/
-}
-
-body { /*waarom werkt dit niet???*/
 	display: grid;
 	grid-template-columns: 1fr 7fr 1fr;
 	grid-template-rows: auto;
@@ -21,18 +15,14 @@ body { /*waarom werkt dit niet???*/
 	grid-area: container;
 }
 
-/*.logo {
-	margin: 15px;
-}*/
-
 img {
 	width: 70%; /*max. 100% zodat de afbeeldingen niet buiten het scherm vallen*/
 	height: 100%;
 }
 
-figure { /*afbeelding in het midden van het scherm*/
+figure {
 	display: flex;
-	justify-content: center;
+	justify-content: center; /*logo in het midden van het scherm*/
 }
 
 h1 {
@@ -50,7 +40,6 @@ h2 {
 p {
 	font-size: 0.9em;
 	margin: 0;
-	/*align-self: flex-end;*/
 	font-weight: bold;
 }
 
@@ -103,8 +92,7 @@ p {
 	flex-direction: column; 
 	background-color: #1D1D1D;
 	border-radius: 10px;
-	/*display: inline-block;*/
-	justify-content: center; /*doet niks*/
+	justify-content: center;
 	align-items: center;
 	text-align: center;
 	max-width: 100%;
@@ -119,12 +107,12 @@ p {
 }
 
 .holderKolonisten {
-	width: 100%;
+	width: 100%; /*grootte van grafiek2*/
 
 }
 
 .holderVoorraden {
-	width: 100%; 
+	width: 100%; /*grootte van grafiek3*/
 }
 
 /*M E D I A   Q U E R I E S*/
@@ -227,12 +215,10 @@ p {
 	main {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
-		grid-template-rows: auto/*5fr 1fr 2fr 3fr*/;
+		grid-template-rows: auto;
 		grid-column-gap: 2.5em;
 		grid-template-areas:
 		"grafiek1 grafiek2"
-		/*"grafiek1 grafiek2"*/
-		/*". grafiek2"*/
 		"grafiek3 grafiek2"
 		"grafiek3 .";
 	}
@@ -246,12 +232,6 @@ p {
 		display: flex;
 		justify-content: center;
 	}
-
-	/*.tabletNaastElkaar {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}*/
 
 	.grafiek3 {
 		grid-area: grafiek3;

@@ -8,14 +8,14 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 		<script>
+			Chart.defaults.global.defaultFontColor = '#D3D3D3';
+			Chart.defaults.global.defaultFontFamily = "'brandon-grotesque', 'sans-serif'";
+			Chart.defaults.global.defaultFontSize = 14;
+
 			function grafiek1Afstand() {
 				var ctx = document.getElementById('afstand');
-				
-				Chart.defaults.global.defaultFontColor = '#D3D3D3';		/*kleur van de tekst in de chart*/
-				Chart.defaults.global.defaultFontFamily = "'brandon-grotesque', 'sans-serif'";
-				Chart.defaults.global.defaultFontSize = 14;
 
-				var datasetsAfstand  =  { /*refereert naar datasets in var myChart (makkelijker voor schalen)*/
+				var datasetsAfstand  =  {
 				            label: 'Afgelegde afstand (miljoen km)',
 				            data: [0, 10, 13, 21, 38, 42, 45, 60],
 				            backgroundColor: [
@@ -35,7 +35,7 @@
 				    },
 				    options: {
 
-				    	legend:{ //legenda weg
+				    	legend:{
 							display: false
 						},
 
@@ -52,7 +52,6 @@
 				            	},
 
 				                ticks: {
-				                	/*display: false,*/
 				                    beginAtZero: true
 				                }
 				            }]
@@ -78,7 +77,7 @@
 				                'rgba(53, 31, 128, 1)',
 				                'rgba(91, 53, 217, 1)',
 				            ],
-				            borderColor: [ 						/*kan deze niet weg??*/
+				            borderColor: [ 
 				                'rgba(64, 37, 255, 1)',
 				                'rgba(52, 213, 169, 1)',
 				                'rgba(27, 15, 64, 1)',
@@ -97,27 +96,19 @@
 				    },
 				    options: {
 
-				    	legend:{ //legenda weg
+				    	legend:{
 								display: false
 							},
-
-				       	/*scales: { //dit deel weg: grid lijnen achter diagram weg
-				            yAxes: [{
-				                ticks: {
-				                	display: false
-				                }
-				            }]
-				        }*/
 				    }
 				});
 			}
 
 			function grafiek3Voorraden(){
-				var ctx = document.getElementById('voorraden'); //javascript variabele, ctx is nu dat canvas element
-				var myChart = new Chart(ctx, {	//alles hieronder is van toepassing op <canvas id="myChart"
+				var ctx = document.getElementById('voorraden');
+				var myChart = new Chart(ctx, {
 				    type: 'bar',
-				    data: { //hier ga je de grafiek echt creeeren. door { kun je zien dat het een 'object' is. dus meer een lijn in de grafiek
-				        labels: ['dranken', 'groente & fruit', 'vlees & vis', 'overig'],	// [ geeft aan dat het een 'array' is
+				    data: { 
+				        labels: ['dranken', 'groente & fruit', 'vlees & vis', 'overig'],	
 				        datasets: [{
 				            label: 'Voorraden (%)',
 				            data: [62, 50, 81, 67],
@@ -140,7 +131,7 @@
 				                'rgba(64, 37, 255, 1)',
 				                'rgba(52, 213, 169, 1)',
 				            ],
-				            hoverBorderColor: [					/*borderkleur wanneeer hover (solid)*/
+				            hoverBorderColor: [					/*borderkleur wanneer hover (solid)*/
 				            	'rgba(53, 31, 128, 1)',
 				                'rgba(91, 53, 217, 1)',
 				                'rgba(64, 37, 255, 1)',
@@ -148,9 +139,9 @@
 				            ]
 				        }]
 				    },
-				    options: {	//om de grafiek een beetje meer te configureren, dus de hele grafiek
+				    options: {
 
-				    	legend:{ //legenda weg
+				    	legend:{
 								display: false
 							},
 
@@ -167,8 +158,7 @@
 				            	},
 
 				                ticks: {
-				                	/*display: false,*/
-				                    beginAtZero: true, //y-as begint bij 0
+				                    beginAtZero: true,
 				                    max: 100,
 				                    min: 0,
 				                    stepSize: 25
@@ -198,9 +188,9 @@
 
 			<main>
 				<section class="grafiek grafiek1">
-					<h1>Afgelegde afstand</h1>
+					<h1>Afgelegde afstand (miljoen km)</h1>
 					<div class="holderAfstand">
-						<canvas id="afstand"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
+						<canvas id="afstand"></canvas>
 					</div>
 				</section>
 
@@ -208,14 +198,14 @@
 					<h1>Kolonisten</h1>
 					<div class="tabletNaastElkaar">
 						<div class="holderKolonisten">
-							<canvas id="kolonisten"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
+							<canvas id="kolonisten"></canvas>
 						</div>
 
-						<article class="legenda">	<!--flexbox gebruiken hiervoor!!-->
+						<article class="legenda">
 							<article class="agrariers">
 								<div class="kleur kleur1"></div>
 								<div class="naastElkaar">
-									<h2>agrariers</h2>
+									<h2>agrari&#235;rs</h2>
 									<p>8</p>
 								</div>
 							</article>
@@ -256,9 +246,9 @@
 				</section>
 
 				<section class="grafiek grafiek3">
-					<h1>Voorraden</h1>
+					<h1>Voorraden (&#37;)</h1>
 					<div class="holderVoorraden">
-						<canvas id="voorraden"></canvas> <!--ctx is dit element, dus als je dit element wilt refereren kan dat via ctx-->
+						<canvas id="voorraden"></canvas>
 					</div>
 				</section>
 
